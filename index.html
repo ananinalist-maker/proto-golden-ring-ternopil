@@ -726,7 +726,15 @@ textarea.inp{height:auto;min-height:92px;padding:13px 14px;line-height:1.45;resi
 .cover .wordmark{text-shadow:0 2px 30px rgba(6,34,28,.35)}
 @media (max-width:760px){ .map__img--m{object-position:62% 50%} }
 /* правки 21.10 (Анна): на першому екрані лише назва; опис і кнопки в смузі зі ставом; кола «Переваги» з фото; рівна галерея */
-.hero h1{font-size:clamp(50px,8vw,124px);letter-spacing:.06em}
+/* назва на першому екрані (Анна: «размести красиво»): по центру, у смузі неба над готелем, не поверх фасаду з його власною вивіскою.
+   Небо у відео займає верхню чверть кадру за будь-якого розміру вікна, тому центр назви на 12,5 % висоти. */
+.hero__in{display:block;padding:0}
+.hero h1{position:absolute;left:var(--m);right:var(--m);top:12.5%;transform:translateY(-50%);text-align:center;white-space:nowrap;
+  font-size:clamp(40px,min(7.4vw,12.5vh),118px);letter-spacing:.08em;text-indent:.08em;text-shadow:0 2px 26px rgba(0,7,5,.55)}
+.hero__scrim{background:radial-gradient(ellipse 46% 22% at 50% 12.5%,rgba(0,7,5,.34) 0%,rgba(0,7,5,0) 100%),linear-gradient(0deg,rgba(0,7,5,.55) 0%,rgba(0,7,5,0) 30%),linear-gradient(180deg,rgba(0,7,5,.28) 0%,rgba(0,7,5,0) 30%)}
+@media (max-width:1199px){ .hero h1{top:calc(76px + (25% - 76px) / 2)} }
+@media (max-width:1099px){ .hdr:not(.is-scrolled):not(.is-open) .logo{opacity:0;pointer-events:none} .hdr .logo{transition:opacity .3s} }
+@media (max-width:899px){ .hero h1{font-size:clamp(30px,10.4vw,64px);letter-spacing:.06em;text-indent:.06em} .hero__ctl{top:auto;bottom:calc(84px + env(safe-area-inset-bottom))} }
 .qb__note{max-width:1180px;margin:12px auto 0;padding:0 8px;font:300 11.5px/1.45 var(--f-body);color:var(--note)}
 .qb__note b{font-weight:500;color:var(--ink)}
 .cover{padding-bottom:210px}
